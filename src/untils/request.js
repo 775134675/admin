@@ -21,7 +21,7 @@ instancs.interceptors.response.use(function(response){
 
 export function get(url,parsms){
     return axios.get(url,{
-        params
+        // params
     })
 }
 
