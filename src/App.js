@@ -1,6 +1,8 @@
 import React from "react";
 import { Switch,Route,Redirect} from 'react-router-dom'
+// adminRoutes登录后页面路由
 import { adminRoutes } from "./routes";
+//登录后页面布局
 import  Frame  from "./components/Frame/Index";
 import {isLogined} from './untils/auth'
 
@@ -10,6 +12,7 @@ function App() {
     <Frame>
       <Switch>
         {adminRoutes.map(route=>{
+          // exact是否是完全匹配路由
           return (
             <Route key={route.path} path={route.path} exact={route.exact} render={routeProps=>{
               return <route.component {...routeProps}/>
@@ -17,6 +20,7 @@ function App() {
           )
         })}
         <Redirect to={adminRoutes[0].path} from='/admin'></Redirect>
+        {/* 找不到404 */}
         <Redirect to='/404'></Redirect>
       </Switch>
     </Frame>

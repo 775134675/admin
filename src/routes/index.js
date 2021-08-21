@@ -11,12 +11,12 @@ export const mainRoutes = [{
     path: '/404',
     component: PageNotFound
 }]
-
+// isShow 是否在左侧导航展示
 export const adminRoutes = [{
         path: '/admin/dashboard',
         component: index,
         isShow:true,
-        title:'看板'
+        title:'主页'
     },
     {
         path: '/admin/products',

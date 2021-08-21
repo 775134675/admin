@@ -16,7 +16,7 @@ function Login(props) {
         .catch(err=>{
 
         })
-        // props.history.push('/admin')
+        props.history.push('/admin')
       };
     
     return (

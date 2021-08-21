@@ -1,4 +1,5 @@
 import React from 'react'
+// 组件使用路由需要使用withRouter插件
 import {withRouter} from 'react-router-dom'
 import { Layout, Menu, Breadcrumb ,Dropdown, message} from 'antd';
 // import { UserOutlined, LaptopOutlined, NotificationOutlined } from '@ant-design/icons';
@@ -6,9 +7,11 @@ import {adminRoutes} from '../../routes'
 import {clearToken} from '../../untils/auth'
 import './frame.css'
 const { Header, Content, Sider } = Layout;
+//过滤需要显示的路由
 const routes = adminRoutes.filter(route=>route.isShow)
 
 function Index(props) {
+    console.log("propspropspropsprops",props)
     const prpMenu=(
         <Menu onClick={(p)=>{
             if(p.key=='loginOut'){
