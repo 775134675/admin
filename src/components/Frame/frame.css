@@ -31,3 +31,7 @@
     background-color: #009688;
     color: #fff;
 }
+.ant-menu-sub.ant-menu-inline{
+
+    background:rgba(0,0,0,.3)!important ;
+}

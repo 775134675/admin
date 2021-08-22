@@ -1,11 +1,11 @@
 import React from 'react'
 import {Form,Card, Button,Input,message} from 'antd'
-function sysDict(props) {
+function index() {
     return (
-        <Card title="字典管理">
+        <Card title="看板">
 
         </Card>
     )
 }
 
-export default sysDict
+export default index

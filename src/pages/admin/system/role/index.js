@@ -1,11 +1,12 @@
 import React from 'react'
+import {Form,Card, Button,Input,message} from 'antd'
 
-function index() {
+function sysRole(props) {
     return (
-        <div>
-            角色管理
-        </div>
+        <Card title="角色管理">
+
+        </Card>
     )
 }
 
-export default index
+export default sysRole

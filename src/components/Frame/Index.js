@@ -1,12 +1,16 @@
 import React from 'react'
 // 组件使用路由需要使用withRouter插件
 import {withRouter} from 'react-router-dom'
+import { Switch,Route,Redirect} from 'react-router-dom'
+
 import { Layout, Menu, Breadcrumb ,Dropdown, message} from 'antd';
 // import { UserOutlined, LaptopOutlined, NotificationOutlined } from '@ant-design/icons';
 import {adminRoutes} from '../../routes'
 import {clearToken} from '../../untils/auth'
 import './frame.css'
 const { Header, Content, Sider } = Layout;
+
+const { SubMenu } = Menu;
 //过滤需要显示的路由
 const routes = adminRoutes.filter(route=>route.isShow)
 
@@ -41,12 +45,28 @@ function Index(props) {
             style={{ height: '100%', borderRight: 0 }}
             >
             {routes.map(route=>{
-                return (
-                <Menu.Item
-                key={route.path} 
-                onClick={p=>props.history.push(p.key)}>
-                    {route.title}
-                    </Menu.Item>)
+                if(route.children){
+                    console.log("route",route)
+
+                    return (
+                        <SubMenu key={route.title} title={route.title}>
+                            {route.children.map(subRoute=>{
+                                return(
+                                    <Menu.Item key={subRoute.path} onClick={p=>props.history.push(p.key)}>{subRoute.title}</Menu.Item>
+
+                                )
+                            })}
+                        </SubMenu>
+                    )
+                }else{
+                    return (
+                        <Menu.Item
+                            key={route.path} 
+                            onClick={p=>props.history.push(p.key)}>
+                            {route.title}
+                        </Menu.Item>
+                    )
+                }
             })}
             </Menu>
         </Sider>
@@ -59,6 +79,9 @@ function Index(props) {
                 minHeight: 280,
             }}
             >
+                {
+                    console.log("props.children",props.children)
+                }
             {props.children}
             </Content>
         </Layout>

@@ -1,11 +1,12 @@
 import React from 'react'
+import {Form,Card, Button,Input,message} from 'antd'
 
-function index() {
+function sysMenu(props) {
     return (
-        <div>
-            菜单管理
-        </div>
+        <Card title="菜单管理">
+
+        </Card>
     )
 }
 
-export default index
+export default sysMenu

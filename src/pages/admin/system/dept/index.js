@@ -1,11 +1,12 @@
 import React from 'react'
+import {Form,Card, Button,Input,message} from 'antd'
 
-function index() {
+function sysDept(props) {
     return (
-        <div>
-            部门管理
-        </div>
+        <Card title="部门管理">
+
+        </Card>
     )
 }
 
-export default index
+export default sysDept

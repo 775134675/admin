@@ -1,11 +1,12 @@
 import React from 'react'
+import {Form,Card, Button,Input,message} from 'antd'
 
-function index() {
+function sysMobileuser(props) {
     return (
-        <div>
-            学生管理
-        </div>
+        <Card title="学生管理">
+
+        </Card>
     )
 }
 
-export default index
+export default sysMobileuser

@@ -1,11 +1,12 @@
 import React from 'react'
+import {Form,Card, Button,Input,message} from 'antd'
 
-function index() {
+function sysActionLog(props) {
     return (
-        <div>
-            行为管理
-        </div>
+        <Card title="行为日志">
+
+        </Card>
     )
 }
 
-export default index
+export default sysActionLog
