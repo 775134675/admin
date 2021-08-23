@@ -1,0 +1,13 @@
+.leftIcon{
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+    color: #fff;
+}
+.mainRight{
+    padding-left: 20px;
+    padding-top: 18px;
+    height: 80px;
+    box-sizing: border-box;
+    background-color: #fff;
+}
