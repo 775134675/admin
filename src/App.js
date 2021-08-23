@@ -12,25 +12,13 @@ function App() {
     <Frame>
       <Switch>
         {adminRoutes.map(route=>{
-          // exact是否是完全匹配路由
-          if(route.children){
-            console.log("route.children",route.children)
-            {route.children.map(subRoute=>{
-              return (
-                <Route key={subRoute.path} path={subRoute.path} exact={subRoute.exact} render={routeProps=>{
-                  return <route.component {...routeProps}/>
-                }} />
-              )
-            })}
-          }else{
+          if(route.path){
             return (
               <Route key={route.path} path={route.path} exact={route.exact} render={routeProps=>{
                 return <route.component {...routeProps}/>
-  
               }} />
             )
           }
-         
         })}
         {/* <Redirect to={adminRoutes[0].path} from='/admin'></Redirect> */}
         {/* 找不到404 */}

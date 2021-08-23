@@ -15,12 +15,6 @@
     background: #007d71;
     text-align: center;
 }
-.ant-layout-sider{
-    flex: 0 0 220px!important;
-    max-width: 220px!important;
-    min-width: 220px!important;
-    width: 220px!important;
-}
 .ant-layout-sider-children>.ant-menu{
     background-color: #222d32!important;
 }

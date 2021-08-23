@@ -25,66 +25,84 @@ export const adminRoutes = [{
         path: '/admin/main',
         component: index,
         isShow:true,
-        title:'主页'
-    },
-    {
+        title:'主页',
+        isSiderbar:true,
+        isMenuBar:false
+    },{ 
         path: '/admin/products',
         component: List,
         exact: true,
         isShow:true,
-        title:'商品管理'
-    },
-    // {
-    //     isShow:true,
-    //     path: '/admin/system/role',
-    //     component: sysRole,
-    //     exact: true,
-    //     title:'角色管理'
-    // },
-    {
-        exact: true,
+        title:'商品管理',
+        isSiderbar:true,
+        isMenuBar:false
+    },{ 
         isShow:true,
         title:'系统管理',
-        children:[{
-            path: '/admin/system/user',
-            component: sysUser,
-            exact: true,
-            title:'用户管理'
-        },{
-            path: '/admin/system/role',
-            component: sysRole,
-            exact: true,
-            title:'角色管理'
-        },{
-            path: '/admin/system/menu',
-            component: sysMenu,
-            exact: true,
-            title:'菜单管理'
-        },{
-            path: '/admin/system/dept',
-            component: sysDept,
-            exact: true,
-            title:'部门管理'
-        },{
-            path: '/admin/system/dict',
-            component: sysDict,
-            exact: true,
-            title:'字典管理'
-        },{
-            path: '/admin/system/actionLog',
-            component: sysActionLog,
-            exact: true,
-            title:'行为日志'
-        },{
-            path: '/admin/system/mobileuser',
-            component: sysMobileuser,
-            exact: true,
-            title:'学生管理'
-        }]
-    },
-    {
-        path: '/admin/products/edit/:id?',
-        component: Edit,
-        isShow:false
+        isSiderbar:true,
+        isMenuBar:true
+    },{
+        path: '/admin/system/user',
+        component: sysUser,
+        exact: true,
+        isShow:true,
+        title:'用户管理',
+        parent:"系统管理"
+    },{
+        path: '/admin/system/role',
+        component: sysRole,
+        exact: true,
+        isShow:true,
+        title:'角色管理',
+        parent:"系统管理"
+    },{
+        path: '/admin/system/menu',
+        component: sysMenu,
+        exact: true,
+        isShow:true,
+        title:'菜单管理',
+        parent:"系统管理"
+    },{
+        path: '/admin/system/dept',
+        component: sysDept,
+        exact: true,
+        isShow:true,
+        title:'部门管理',
+        parent:"系统管理"
+    },{
+        path: '/admin/system/dict',
+        component: sysDict,
+        exact: true,
+        isShow:true,
+        title:'字典管理',
+        parent:"系统管理"
+    },{
+        path: '/admin/system/actionLog',
+        component: sysActionLog,
+        exact: true,
+        isShow:true,
+        title:'行为日志',
+        parent:"系统管理"
+    },{
+        path: '/admin/system/mobileuser',
+        component: sysMobileuser,
+        exact: true,
+        isShow:true,
+        title:'学生管理',
+        parent:"系统管理"
     }
+
+
+
+
+    // {
+    //     isShow:true,
+    //     title:'系统管理',
+    //     children:[]
+    // }
+    // {
+    //     path: '/admin/products/edit/:id?',
+    //     component: Edit,
+    //     isShow:false
+    // }
 ]

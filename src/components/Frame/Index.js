@@ -14,8 +14,12 @@ const { SubMenu } = Menu;
 //过滤需要显示的路由
 const routes = adminRoutes.filter(route=>route.isShow)
 
+const parentRoutes = routes.filter(route=>route.isSiderbar)
+const childRoutes = routes.filter(route=>route.parent)
+
+// const childRoutes = adminRoutes.filter(route=>route.parent)
 function Index(props) {
-    console.log("propspropspropsprops",props)
+    console.log("props",props)
     const prpMenu=(
         <Menu onClick={(p)=>{
             if(p.key=='loginOut'){
@@ -37,32 +41,29 @@ function Index(props) {
                 </Dropdown>
             </Header>
         <Layout>
-        <Sider width={200} className="site-layout-background">
+        <Sider width={220} className="site-layout-background">
             <Menu
             mode="inline"
             defaultSelectedKeys={['1']}
             defaultOpenKeys={['sub1']}
             style={{ height: '100%', borderRight: 0 }}
             >
-            {routes.map(route=>{
-                if(route.children){
-                    console.log("route",route)
-
+            {parentRoutes.map(route=>{
+                if(route.isMenuBar){
                     return (
-                        <SubMenu key={route.title} title={route.title}>
-                            {route.children.map(subRoute=>{
-                                return(
-                                    <Menu.Item key={subRoute.path} onClick={p=>props.history.push(p.key)}>{subRoute.title}</Menu.Item>
-
-                                )
+                        <SubMenu title={route.title}>
+                            {childRoutes.map(subRoute=>{
+                                if(subRoute.parent==route.title){
+                                    return(
+                                        <Menu.Item key={subRoute.path} onClick={p=>props.history.push(p.key)}>{subRoute.title}</Menu.Item>
+                                    )
+                                }
                             })}
                         </SubMenu>
                     )
                 }else{
                     return (
-                        <Menu.Item
-                            key={route.path} 
-                            onClick={p=>props.history.push(p.key)}>
+                        <Menu.Item key={route.path}  onClick={p=>props.history.push(p.key)}>
                             {route.title}
                         </Menu.Item>
                     )
@@ -73,15 +74,11 @@ function Index(props) {
         <Layout style={{ padding: '16px' }}>
             <Content
             className="site-layout-background"
-            style={{
-                padding: 24,
-                margin: 0,
-                minHeight: 280,
-            }}
-            >
+            style={{padding: 24,margin: 0, minHeight: 280}}>
                 {
-                    console.log("props.children",props.children)
+                    console.log("props111111111",props)
                 }
+
             {props.children}
             </Content>
         </Layout>
