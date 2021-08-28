@@ -8,3 +8,9 @@ html,body,#root,.ant-layout{
 .ant-card-body{
   background-color: #eee;
 }
+.bulb-on{
+  background: red;
+}
+.bulb-off{
+  background: blue;
+}
