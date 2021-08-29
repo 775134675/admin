@@ -1,4 +1,4 @@
-import React from "react";
+import React,{Component} from "react";
 import { Switch,Route,Redirect} from 'react-router-dom'
 // adminRoutes登录后页面路由
 import { adminRoutes } from "./routes";
@@ -7,8 +7,10 @@ import  Frame  from "./components/Frame/Index";
 import {isLogined} from './untils/auth'
 
 import './App.css'
-function App() {
-  return (isLogined()?
+import { render } from "@testing-library/react";
+class App extends Component{
+  render(){
+    return (isLogined()?
     <Frame>
       <Switch>
         {adminRoutes.map(route=>{
@@ -28,6 +30,8 @@ function App() {
     :
     <Redirect to='/login'></Redirect>
   );
+  }
+  
 }
 
 export default App;

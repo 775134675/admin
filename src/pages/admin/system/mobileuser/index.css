@@ -1,0 +1,27 @@
+.leftBtnGroup{
+    float: left;
+}
+.rightBtnGroup{
+    float: right;
+    margin-left: auto;
+}
+.btnContainer{
+    margin: 16px 0;
+    width: 100%;
+    display: table;
+}
+#userRoleForm{
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+
+
+
+
+
+
+
+
+
+
