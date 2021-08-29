@@ -28,15 +28,17 @@ export const adminRoutes = [{
         title:'主页',
         isSiderbar:true,
         isMenuBar:false
-    },{ 
-        path: '/admin/products',
-        component: List,
-        exact: true,
-        isShow:true,
-        title:'商品管理',
-        isSiderbar:true,
-        isMenuBar:false
-    },{ 
+    }
+    // ,{ 
+    //     path: '/admin/products',
+    //     component: List,
+    //     exact: true,
+    //     isShow:true,
+    //     title:'商品管理',
+    //     isSiderbar:true,
+    //     isMenuBar:false
+    // }
+    ,{ 
         isShow:true,
         title:'系统管理',
         isSiderbar:true,

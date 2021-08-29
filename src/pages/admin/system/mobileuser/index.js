@@ -18,97 +18,75 @@ class SysMobileuser extends Component {
     data = [
         {
             id: '1',
-            userName: 'zhoushixin',
-            nickname: '周女士',
-            department: '幸福生涯联盟',
-            gender: '女',
-            phone: '15094336699',
-            email: '775134685@qq.com',
-            createTime: '2021-03-06 20:08:05',
+            studentNum: '2019441009',
+            createTime: '2021-05-25 23:50:50',
+            name: 'cc',
+            email: '18075291989@163.com',
+            gender: '15094336699',
             status: '正常',
-        },
-        {
-            id: '2',
-            userName: 'zhoushixin',
-            nickname: '周女士',
-            department: '幸福生涯联盟',
-            gender: '女',
-            phone: '15094336699',
-            email: '775134685@qq.com',
-            createTime: '2021-03-06 20:08:05',
+            phone: '18155069020',
+            weixinNum: '正常',
+            school:'上海设计艺术学院',
+            college:'表演学院',
+            major:"演员"
+        },{
+            id: '1',
+            studentNum: '2019441009',
+            createTime: '2021-05-25 23:50:50',
+            name: 'cc',
+            email: '18075291989@163.com',
+            gender: '15094336699',
             status: '正常',
-        },
-        {
-            id: '3',
-            userName: 'zhoushixin',
-            nickname: '周女士',
-            department: '幸福生涯联盟',
-            gender: '女',
-            phone: '15094336699',
-            email: '775134685@qq.com',
-            createTime: '2021-03-06 20:08:05',
+            phone: '18155069020',
+            weixinNum: '正常',
+            school:'上海设计艺术学院',
+            college:'表演学院',
+            major:"演员"
+        },{
+            id: '1',
+            studentNum: '2019441009',
+            createTime: '2021-05-25 23:50:50',
+            name: 'cc',
+            email: '18075291989@163.com',
+            gender: '15094336699',
             status: '正常',
-        },
-        {
-            id: '4',
-            userName: 'zhoushixin',
-            nickname: '周女士',
-            department: '幸福生涯联盟',
-            gender: '女',
-            phone: '15094336699',
-            email: '775134685@qq.com',
-            createTime: '2021-03-06 20:08:05',
+            phone: '18155069020',
+            weixinNum: '正常',
+            school:'上海设计艺术学院',
+            college:'表演学院',
+            major:"演员"
+        },{
+            id: '1',
+            studentNum: '2019441009',
+            createTime: '2021-05-25 23:50:50',
+            name: 'cc',
+            email: '18075291989@163.com',
+            gender: '15094336699',
             status: '正常',
-        },
-        {
-            id: '5',
-            userName: 'zhoushixin',
-            nickname: '周女士',
-            department: '幸福生涯联盟',
-            gender: '女',
-            phone: '15094336699',
-            email: '775134685@qq.com',
-            createTime: '2021-03-06 20:08:05',
-            status: '正常',
-        },
-        {
-            id: '6',
-            userName: 'zhoushixin',
-            nickname: '周女士',
-            department: '幸福生涯联盟',
-            gender: '女',
-            phone: '15094336699',
-            email: '775134685@qq.com',
-            createTime: '2021-03-06 20:08:05',
-            status: '正常',
+            phone: '18155069020',
+            weixinNum: '正常',
+            school:'上海设计艺术学院',
+            college:'表演学院',
+            major:"演员"
         }
-
     ];
     columns = [
         {
-            title: '用户名',
-            dataIndex: 'userName',
-            key: 'userName',
+            title: '学号',
+            dataIndex: 'studentNum',
+            key: 'studentNum',
+            fixed: 'left',
         },
         {
-            title: '用户昵称',
-            dataIndex: 'nickname',
-            key: 'nickname',
+            title: '创建时间',
+            dataIndex: 'createTime',
+            key: 'createTime',
+            fixed: 'left',
         },
         {
-            title: '所在部门',
-            dataIndex: 'department',
-            key: 'department',
-        },
-        {
-            title: '性别',
-            key: 'gender',
-            dataIndex: 'gender',
-        },
-        {
-            title: '电话',
-            key: 'phone',
-            dataIndex: 'phone',
+            title: '姓名',
+            dataIndex: 'name',
+            key: 'name',
         },
         {
             title: '邮箱',
@@ -116,9 +94,9 @@ class SysMobileuser extends Component {
             dataIndex: 'email',
         },
         {
-            title: '创建时间',
-            key: 'createTime',
-            dataIndex: 'createTime',
+            title: '性别',
+            key: 'gender',
+            dataIndex: 'gender',
         },
         {
             title: '状态',
@@ -126,9 +104,33 @@ class SysMobileuser extends Component {
             dataIndex: 'status',
         },
         {
+            title: '手机号',
+            key: 'phone',
+            dataIndex: 'phone',
+        },
+        {
+            title: '微信号',
+            key: 'weixinNum',
+            dataIndex: 'weixinNum',
+        },{
+            title: '学校',
+            key: 'school',
+            dataIndex: 'school',
+        },{
+            title: '学院',
+            key: 'college',
+            dataIndex: 'college',
+        },{
+            title: '专业',
+            key: 'major',
+            dataIndex: 'major',
+        },
+        {
             title: '操作',
             key: 'operate',
             dataIndex: 'operate',
+            fixed: 'right',
+            width:170,
             render: (text, record) => (
                 
                 <Space size="middle">
@@ -200,7 +202,7 @@ class SysMobileuser extends Component {
                     </div>
                 </Form>
 
-                <Table rowSelection={rowSelection} dataSource={this.data} columns={this.columns} />
+                <Table rowSelection={rowSelection} dataSource={this.data} columns={this.columns} scroll={{ x: 1300 }} size="small"/>
             </Card>
         )
     }

@@ -176,7 +176,7 @@ class SysActionLog extends Component {
                         <Button>清空日志</Button>
                     </div>
                 </Form>
-                <Table rowSelection={rowSelection} dataSource={this.data} columns={this.columns} />
+                <Table rowSelection={rowSelection} dataSource={this.data} columns={this.columns}  size="small" />
             </Card>
         )
     }

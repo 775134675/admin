@@ -16,39 +16,42 @@ function Login(props) {
         .catch(err=>{
 
         })
-        props.history.push('/admin')
+        props.history.push('/admin/main')
       };
     
     return (
-        <Card title='先知管理后台' className="login-form">
-            <Form name="normal_login"  onFinish={onFinish}>
-            <Form.Item
-                name="username"
-                rules={[
-                {
-                    required: true,
-                    message: '请输入账号',
-                },
-                ]}
-            >
-                <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="账号" />
-            </Form.Item>
-            <Form.Item name="password"
-                rules={[
-                {
-                    required: true,
-                    message: '请输入密码',
-                },]}>
-                <Input prefix={<LockOutlined className="site-form-item-icon" />} type="password" placeholder="密码"/>
-            </Form.Item>
+        <div className='loginBg'>
+            <Card title='先知管理后台' className="login-form">
 
-            <Form.Item>
-                <Button type="primary" htmlType="submit" className="login-form-button">
-                登录
-                </Button>
-            </Form.Item>
-        </Form>
-    </Card>
+                <Form name="normal_login"  onFinish={onFinish}>
+                    <Form.Item
+                        name="username"
+                        rules={[
+                        {
+                            required: true,
+                            message: '请输入账号',
+                        },
+                        ]}
+                    >
+                        <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="账号" />
+                    </Form.Item>
+                    <Form.Item name="password"
+                        rules={[
+                        {
+                            required: true,
+                            message: '请输入密码',
+                        },]}>
+                        <Input prefix={<LockOutlined className="site-form-item-icon" />} type="password" placeholder="密码"/>
+                    </Form.Item>
+
+                    <Form.Item>
+                        <Button type="primary" htmlType="submit" block className="login-form-button">
+                        登录
+                        </Button>
+                    </Form.Item>
+                </Form>
+            </Card>
+        </div>
     )
 }
 
