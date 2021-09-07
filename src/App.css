@@ -14,3 +14,6 @@ html,body,#root,.ant-layout{
 .bulb-off{
   background: blue;
 }
+.ant-menu-submenu-arrow::before, .ant-menu-submenu-arrow::after{
+  color: #fff;
+}
