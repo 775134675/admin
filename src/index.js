@@ -8,7 +8,6 @@ import {mainRoutes} from "./routes"
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Login from './pages/Login';
-import List from './pages/admin/products/List';
 
 ReactDOM.render(
   <Router>

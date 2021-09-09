@@ -1,7 +1,6 @@
-import List from '../pages/admin/products/List';
 import index from "../pages/admin/main";
 import Login from "../pages/Login";
-import Edit from '../pages/admin/products/Edit';
+// import Edit from '../pages/admin/products/Edit';
 import PageNotFound from '../pages/PageNotFound';
 
 // 系统管理

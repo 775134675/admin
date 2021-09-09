@@ -1,14 +1,17 @@
 import React, { useState, Component } from 'react';
-import { Form, Input, Button, Card, Select, Table, Tag, Space } from 'antd';
-
+import { Form, Input, Button, Card, Select, Table, Tag, Space,Modal } from 'antd';
+import EditUser from './user-edit'
 import './index.css'
 const { Option } = Select;
 
 class SysUser extends Component {
 
-    constructor(props) {
-        super(props)
-    }
+   
+    state = {
+        selectedRowKeys: [], 
+        loading: false,
+        isModalVisible:false
+    };
     files = [{
         "name": [
             "status"
@@ -133,21 +136,29 @@ class SysUser extends Component {
             render: (text, record) => (
                 
                 <Space size="middle">
-                  <a>编辑{record.id}</a>
+                  <a onClick={()=>this.editUser(record)}>编辑{record.id}</a>
                   <a>详情{record.id}</a>
                   <a>删除{record.id}</a>
                 </Space>
             ),
         },
     ];
+    
     onFinish = (value) => {
         console.log('Received values from form: ', value);
     };
+    editUser(value){
+        console.log("43534534")
+        console.log("value",value)
+        // console.log("isModalVisible",this.isModalVisible)
 
-    state = {
-        selectedRowKeys: [], // Check here to configure the default column
-        loading: false,
-    };
+        this.setState({
+            isModalVisible:true
+        })
+        // this.state.isModalVisible = true
+        console.log("isModalVisible",this.isModalVisible)
+    }
+    
 
     start = () => {
         this.setState({ loading: true });
@@ -165,7 +176,7 @@ class SysUser extends Component {
         this.setState({ selectedRowKeys });
     };
     render() {
-        const { loading, selectedRowKeys } = this.state;
+        const { loading, selectedRowKeys,isModalVisible} = this.state;
         const rowSelection = {
             selectedRowKeys,
             onChange: this.onSelectChange,
@@ -227,6 +238,8 @@ class SysUser extends Component {
                 </div>
 
                 <Table rowSelection={rowSelection} dataSource={this.data} columns={this.columns}  size="small"/>
+
+                <EditUser isModalVisible={isModalVisible}/>
             </Card>
         )
     }
